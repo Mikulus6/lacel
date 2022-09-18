@@ -66,7 +66,7 @@ lacel.**cfg2json**(*cfg_file_name*, *json_file_name*)
 lacel.**dir2arch**(*directory_name*, *archive_name*)
 
 > Reads content of a directory under given *directory_name* file path and archives its content to a `.*dat` or `.*zpl` archive under given *archive_name* file path.
-> Headers of archived files do not contain folder name in its names.
+> Headers of archived files do not contain folder name in their names.
 
 lacel.**image2bar**(*image_file_name*, *bar_file_name*)
 
