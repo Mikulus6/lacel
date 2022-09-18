@@ -168,7 +168,7 @@ Each point/subpoint in following section describes one element of list/sublist i
 
 While using **bar2img()** and **img2bar()** functions, primary colors are converted between `R5 G6 B5` and `R8 B8 G8` in a way described below by given formulas:
 
-`R5 G6 B5` &rarr; `R8 B8 G8`:
+`R5 G6 B5` &rarr; `R8 G8 B8`:
 * `red :=  round(red * 255/31)`
 * `green := round(green * 255/63)`
 * `blue := round(blue * 255/31)`
