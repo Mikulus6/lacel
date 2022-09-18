@@ -8,7 +8,7 @@
 
 (Original archive name) | (Executable file compilation date) | (Version number)
 
-* `LosV1_03.zip`  02nd Jul 2002 `1.03`
+* `LosV1_03.zip`  2nd Jul 2002 `1.03`
 * `los.zip`  31st Aug 2003 `2.01`
 * `Los2.zip`  28th Sep 2003 `2.01`
 * `Los_murek.zip`  11th May 2006  `2.01`
