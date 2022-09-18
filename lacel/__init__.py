@@ -1,7 +1,7 @@
 """
 Łoś assets conversions external library
 
-Łacel is a library writen in Python 3 for assets and files conversions from video game "Po prostu Łoś".
+Łacel is a library writen in Python 3 for assets and files conversions from the video game "Po prostu Łoś".
 For further information read file "README.md".
 """
 
