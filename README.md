@@ -27,7 +27,7 @@
 
 **Dependencies:**
 
-Following programs and packages must be installed in order to use *Łacel* library:
+Following programs and packages must be installed in order to use *Łacel*:
 
 * [python 3](https://www.python.org/) (tested with python 3.10.5)
 * python 3 built-in libraries:
