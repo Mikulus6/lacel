@@ -26,12 +26,12 @@ for directory in sys_executable_list:
     sys_executable_path += os_sep
 sys_executable_path = os_path_normpath(sys_executable_path)
 
-libraries_absolute_directory = os_path_join(sys_executable_path,
-                                            os_path_normpath(libraries_relative_directory),
-                                            lacel_library_name)
+library_absolute_directory = os_path_join(sys_executable_path,
+                                          os_path_normpath(libraries_relative_directory),
+                                          lacel_library_name)
 
 print("Python executable file directory: "+sys_executable_path)
-print("Library source absolute path: "+libraries_absolute_directory)
+print("Library source absolute path: " + library_absolute_directory)
 
 
 print("Trying to install "+PIL_library_name+" library.")
@@ -40,23 +40,23 @@ install_library("Pillow")
 copy_library_directory = True
 
 loop = True
-while loop and os_path_isdir(libraries_absolute_directory):
-    user_input = input("Directory "+libraries_absolute_directory +
+while loop and os_path_isdir(library_absolute_directory):
+    user_input = input("Directory " + library_absolute_directory +
                        " already exists. Do you want to remove it? (Y/n):")
 
     if user_input == "Y":
         loop = False
         copy_library_directory = True
-        shutil_rmtree(libraries_absolute_directory)
+        shutil_rmtree(library_absolute_directory)
     elif user_input == "n":
         loop = False
         copy_library_directory = False
 
 if copy_library_directory:
-    print("Trying to copy directory "+library_folder_path+" to "+libraries_absolute_directory+".")
-    shutil_copytree(library_folder_path, libraries_absolute_directory)
+    print("Trying to copy directory " + library_folder_path + " to " + library_absolute_directory + ".")
+    shutil_copytree(library_folder_path, library_absolute_directory)
     print("Directory successfully copied.")
 else:
-    print("Directory "+library_folder_path+" cannot be copied to "+libraries_absolute_directory+".")
+    print("Directory " + library_folder_path + " cannot be copied to " + library_absolute_directory + ".")
 
 input("Press Enter to exit the setup.")
