@@ -13,7 +13,6 @@ from .manager import binstr_to_hexstr,\
                      json_loads,\
                      read_file_as_bytes,\
                      save_hexstr_to_file,\
-                     str_to_bytes,\
                      str_to_hexstr
 
 # constant values

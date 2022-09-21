@@ -1,31 +1,25 @@
-from datetime import datetime as datetime_datetime,\
-                     timezone as datetime_timezone
-
-from json import dumps as json_dumps,\
-                 loads as json_loads
-
-from os import listdir as os_listdir,\
-               mkdir as os_mkdir,\
-               sep as os_sep
-
-from os.path import isabs as os_path_isabs,\
-                    isdir as os_path_isdir,\
-                    isfile as os_path_isfile,\
-                    join as os_path_join,\
-                    normpath as os_path_normpath
-
-# If error occurs here please install following library: https://pypi.org/project/Pillow/
-from PIL import Image as PIL_Image
-
-# Libraries imported above may be used by other modules. Please ignore warnings saying that they are unused.
-
 from .constants import acceptable_decoding_types,\
                        date_format,\
+                       datetime_datetime,\
+                       datetime_timezone,\
                        encoding_type,\
                        error_values,\
+                       json_dumps,\
+                       json_loads,\
                        key_type_name,\
                        keyboard_values,\
+                       os_listdir,\
+                       os_mkdir,\
+                       os_path_isabs,\
+                       os_path_isdir,\
+                       os_path_isfile,\
+                       os_path_join,\
+                       os_path_normpath,\
+                       os_sep,\
+                       PIL_Image,\
                        unix_epoch_as_filetime
+
+# Functions imported above may be used by other modules. Please ignore warnings saying that they are unused.
 
 
 def split_string_to_list(var, length):

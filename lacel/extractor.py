@@ -1,14 +1,17 @@
 from .constants import all_extensions_dict,\
                        archive_id_field,\
-                       error_values
+                       error_values,\
+                       internal_os_sep
 
 from .manager import check_correct_extension,\
                      create_directory_if_absent,\
                      hexstr_to_bytes,\
                      hexstr_to_int_le,\
-                     hexstr_to_str,\
-                     save_bytes_to_directory,\
-                     read_file_as_hexstr
+                     hexstr_to_str, \
+                     os_path_normpath,\
+                     os_sep,\
+                     read_file_as_hexstr,\
+                     save_bytes_to_directory
 
 # constant values
 constant_main_header_length = len(archive_id_field) + 4
@@ -68,6 +71,9 @@ def read_all_headers(archive_hexstr):
 
             # if the header name ended (The current byte is a hexadecimal "00" gap.)
             if int(byte_value, 16) == 0:
+
+                # fix os separator from "Pakowanie.exe" GUI to regular os separator.
+                current_subfile_name = os_path_normpath(current_subfile_name).replace(internal_os_sep, os_sep)
 
                 # save file name and file pointer to dictionary
                 headers[current_subfile_name] = header_pointer
