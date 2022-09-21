@@ -39,7 +39,7 @@ Following programs and packages must be installed in order to use *Łacel*:
   * [sys](https://docs.python.org/3/library/sys.html) (necessary only for `setup.py`)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
 
-In order to install *Łacel* run file `setup.py` or install manually library `Pillow` and manually paste directory `lacel` into directory `\Lib\site-packages`.
+In order to install *Łacel* run file `setup.py` or install manually library `Pillow` and manually paste the directory `lacel` into the directory `\Lib\site-packages`.
 
 ## Documentation
 
