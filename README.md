@@ -34,9 +34,12 @@ Following programs and packages must be installed in order to use *Łacel*:
   * [datetime](https://docs.python.org/3/library/datetime.html)
   * [json](https://docs.python.org/3/library/json.html)
   * [os](https://docs.python.org/3/library/os.html)
+  * [shutil](https://docs.python.org/3/library/shutil.html) (necessary only for `lacel_setup.py`)
+  * [subprocess](https://docs.python.org/3/library/subprocess.html) (necessary only for `lacel_setup.py`)
+  * [sys](https://docs.python.org/3/library/sys.html) (necessary only for `lacel_setup.py`)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
 
-After installing all dependencies, put manually folder `lacel` in the directory `\Lib\site-packages`.
+In order to install *Łacel* run file `lacel_setup.py` or install manually library `Pillow` and manually paste the directory `lacel` into the directory `\Lib\site-packages`.
 
 ## Documentation
 
@@ -53,6 +56,7 @@ lacel.**bar2bmp**(*bar_file_name*, *bmp_file_name*)
 lacel.**bar2image**(*bar_file_name*, *image_file_name*, *set_black_to_alpha*=`False`)
 
 > Reads content of a `*.bar` image file under given *bar_file_name* file path, converts its content to a Pillow Image Object with color pallete `R8 G8 B8` or `R8 G8 B8 A8` and saves it as a `*.bmp` or `*.png` file under given *image_file_name* file path.
+> 
 > If *set_black_to_alpha* is set to `True`, all black pixels will be replaced with transparent pixels.
 
 lacel.**bmp2bar**(*bmp_file_name*, *bar_file_name*)
@@ -66,7 +70,10 @@ lacel.**cfg2json**(*cfg_file_name*, *json_file_name*)
 lacel.**dir2arch**(*directory_name*, *archive_name*)
 
 > Reads content of a directory under given *directory_name* file path and archives its content to a `.*dat` or `.*zpl` archive under given *archive_name* file path.
+> 
 > Headers of archived files do not contain folder name in their names.
+> 
+> Empty directories will not be archived.
 
 lacel.**image2bar**(*image_file_name*, *bar_file_name*)
 
@@ -83,8 +90,12 @@ lacel.**json2pln**(*json_file_name*, *pln_file_name*)
 lacel.**list2arch**(*files_list*, *archive_name*, *remove_base_dirs_from_names*=`False`, *remove_all_dirs_from_names*=`False`)
 
 > Reads content of each file path included in list under given *files_list* object and archives theirs content to a `.*dat` or `.*zpl` archive under given *archive_name* file path.
+> 
 > If *remove_base_dirs_from_names* is set to `True`, headers of archived files will not contain the highest folder names from given file paths.
+> 
 > If *remove_all_dirs_from_names* is set to `True`, headers of archived files will contain only the name of given archived files. This option consequently removes any potential directories inside the archive.
+> 
+> Empty directories will not be archived.
 
 lacel.**lpl2txt**(*lpl_file_name*, *txt_file_name*)
 
@@ -97,6 +108,7 @@ lacel.**pln2json**(*pln_file_name*, *json_file_name*)
 lacel.**txt2lpl**(*txt_file_name*, *lpl_file_name*)
 
 > Reads content of a `*.txt` file under given *txt_file_name* file path and copies it to `*.lpl` file under given *lpl_file_name* file path with potential encoding fixes from `ANSI`, `ASCII` or `UTF-8` to `Windows-1250`.
+> 
 > Encoding correction may not always work.
 
 ### Json structure
@@ -181,6 +193,8 @@ While using **bar2img()** and **img2bar()** functions, primary colors are conver
 ### Text conversion
 
 In order to avoid incorrect text conversion while using **json2cfg()**, **json2pln()** and **txt2lpl()** all `*.txt` and `*.json` flies should be saved in encoding `Windows-1250`.
+
+It is recommended to use [Notepad++](https://notepad-plus-plus.org/) or similar application while reading or editing `*.json` files.
 
 ## Examples
 

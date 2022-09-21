@@ -1,6 +1,7 @@
 from .constants import all_extensions_dict,\
                        archive_id_field,\
-                       error_values
+                       error_values,\
+                       internal_os_sep
 
 from .manager import check_correct_extension,\
                      int_to_hexstr_le,\
@@ -11,9 +12,9 @@ from .manager import check_correct_extension,\
                      os_path_join,\
                      os_path_normpath,\
                      os_sep,\
+                     read_file_as_hexstr,\
                      save_hexstr_to_file,\
-                     str_to_hexstr,\
-                     read_file_as_hexstr
+                     str_to_hexstr
 
 # constant value
 internal_archive_extensions = all_extensions_dict.get("internal_archive_extensions")
@@ -38,6 +39,9 @@ def read_files_content(files_list,
         if os_path_isfile(file_name):
 
             file_content = read_file_as_hexstr(file_name)
+
+            # fix os separator to be the same as in original "Pakowanie.exe" GUI.
+            file_name_no_path = os_path_normpath(file_name_no_path).replace(os_sep, internal_os_sep)
 
             if file_name_no_path in list(files_hexstr.keys()):
                 raise FileExistsError(error_values.get("file_duplicated_to_archive"))
@@ -133,6 +137,7 @@ def pack_directory_to_archive(directory_name,
                               archive_name):
     """Function creates a new archive from a given directory."""
 
+    # empty directories will not be archived.
     files_list = get_directory_files(directory_name=directory_name)
 
     pack_files_to_archive(files_list=files_list,
