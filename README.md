@@ -37,12 +37,10 @@ Following programs and packages must be installed in order to use *Łacel*:
 * [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
 
-In order to install *Łacel* run following command in the directory with `setup.py` file:
+In order to install *Łacel* run following command:
 ```bash
-python setup.py install
+pip3 install git+https://github.com/Mikulus6/lacel.git@release
 ```
-
-You can also manually install all dependencies and paste the directory `lacel` into the directory `Lib\site-packages`.
 
 ## Documentation
 
