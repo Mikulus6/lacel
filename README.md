@@ -34,12 +34,15 @@ Following programs and packages must be installed in order to use *Łacel*:
   * [datetime](https://docs.python.org/3/library/datetime.html)
   * [json](https://docs.python.org/3/library/json.html)
   * [os](https://docs.python.org/3/library/os.html)
-  * [shutil](https://docs.python.org/3/library/shutil.html) (necessary only for `lacel_setup.py`)
-  * [subprocess](https://docs.python.org/3/library/subprocess.html) (necessary only for `lacel_setup.py`)
-  * [sys](https://docs.python.org/3/library/sys.html) (necessary only for `lacel_setup.py`)
+* [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
 
-In order to install *Łacel* run file `lacel_setup.py` or install manually library `Pillow` and manually paste the directory `lacel` into the directory `\Lib\site-packages`.
+In order to install *Łacel* run following command in the directory with `setup.py` file:
+```bash
+python setup.py install
+```
+
+You can also install manually all dependencies and paste the directory `lacel` into the directory `\Lib\site-packages`.
 
 ## Documentation
 

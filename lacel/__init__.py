@@ -5,8 +5,6 @@
 For further information read file "README.md".
 """
 
-__author__ = "Mikołaj Walc aka. \"Mikulus\""
-
 from .archiver import pack_directory_to_archive as dir2arch,\
                       pack_files_to_archive as list2arch
 
