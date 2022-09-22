@@ -39,7 +39,7 @@ Following programs and packages must be installed in order to use *Łacel*:
 
 In order to install *Łacel* run following command:
 ```bash
-pip3 install git+https://github.com/Mikulus6/lacel.git@release
+pip3 install git+https://github.com/Mikulus6/lacel.git
 ```
 
 ## Documentation
