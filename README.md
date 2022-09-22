@@ -42,7 +42,7 @@ In order to install *Łacel* run following command in the directory with `setup.
 python setup.py install
 ```
 
-You can also install manually all dependencies and paste the directory `lacel` into the directory `\Lib\site-packages`.
+You can also manually install all dependencies and paste the directory `lacel` into the directory `Lib\site-packages`.
 
 ## Documentation
 
