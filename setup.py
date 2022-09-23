@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from os import walk
 from os.path import join
 from setuptools import find_packages,\
                        setup
@@ -9,6 +10,10 @@ version_file = join(directory, "version.txt")
 
 with open(version_file, 'r') as f:
     version = f.read()
+
+# include entire directory
+datafiles = [(d, [join(d, f) for f in files])
+             for d, folders, files in walk(directory)]
 
 setup(name="lacel",
       version=version,
@@ -21,5 +26,6 @@ setup(name="lacel",
       packages=find_packages(where=directory),
       package_dir={"": directory},
       include_package_data=True,
+      data_files=datafiles,
       install_requires=['Pillow>=9.2.0']
       )
