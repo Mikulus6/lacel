@@ -23,7 +23,9 @@ setup(name="lacel",
       author="Mikołaj Walc \"Mikulus\"",
       author_email="mikulus6@gmail.com",
       url="https://github.com/Mikulus6/lacel",
-      packages=find_packages(),
+      packages=find_packages(where=directory),
+      package_dir={"": directory},
+      include_package_data=True,
       data_files=datafiles,
       install_requires=['Pillow>=9.2.0']
       )
