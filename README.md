@@ -56,7 +56,7 @@ lacel.**bar2bmp**(*bar_file_name*, *bmp_file_name*)
 
 > Reads content of a `*.bar` image file under given *bar_file_name* file path, converts its content to a `*.bmp` image file data with colors palette `R5 G6 B5` and saves it as a `*.bmp` file under given *bmp_file_name* file path.
 
-lacel.**bar2image**(*bar_file_name*, *image_file_name*, *set_black_to_alpha*=`False`)
+lacel.**bar2img**(*bar_file_name*, *image_file_name*, *set_black_to_alpha*=`False`)
 
 > Reads content of a `*.bar` image file under given *bar_file_name* file path, converts its content to a Pillow Image Object with color pallete `R8 G8 B8` or `R8 G8 B8 A8` and saves it as a `*.bmp` or `*.png` file under given *image_file_name* file path.
 > 
@@ -78,7 +78,7 @@ lacel.**dir2arch**(*directory_name*, *archive_name*)
 > 
 > Empty directories will not be archived.
 
-lacel.**image2bar**(*image_file_name*, *bar_file_name*)
+lacel.**img2bar**(*image_file_name*, *bar_file_name*)
 
 > Reads content of a `*.bmp` or `*.png` file image file under given *bar_file_name* file path, converts its content to a Pillow Image Object with color pallete `R5 G6 B5` and saves it as a `*.bar` file under given *bar_file_name* file path. 
 
