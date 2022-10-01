@@ -86,7 +86,7 @@ def convert_list_to_pln(pln_list):
         camera_data_hexstr += single_camera_data_hexstr
 
     break_data_hexstr = int_to_hexstr_le(break_data)
-    stage_name_hexstr = str_to_hexstr(stage_name) # this line also changes potential encoding difference
+    stage_name_hexstr = str_to_hexstr(stage_name)  # this line also changes potential encoding difference
 
     if len(stage_name_hexstr) < max_stage_name_hexstr_length:
         stage_name_hexstr += "0"*(max_stage_name_hexstr_length - len(stage_name_hexstr))

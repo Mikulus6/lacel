@@ -37,7 +37,7 @@ Following programs and packages must be installed in order to use *Łacel*:
 * [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script) (tested with setuptools 65.3.0)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
 
-In order to install *Łacel* run the following command:
+In order to install *Łacel* run the following command ([Git](https://git-scm.com/) is required):
 ```bash
 pip3 install git+https://github.com/Mikulus6/lacel.git
 ```
@@ -120,7 +120,7 @@ Each point/subpoint in following section describes one element of list/sublist i
 
 #### `*.json` converted from `*.cfg`:
 
-* Key value "*W LEWO*" (left) (<u>each key value can be an integer or a specific string in encoding `Windows-1250` displayed in game settings</u>)
+* Key value "*W LEWO*" (left) (<u>each key value can be an integer or a specific string in encoding `Windows-1250` displayed in game settings. All string values for keys are in file `lacel/data/keys.json`</u>)
 * Key value "*W PRAWO*" (right)
 * Key value "*W GÓRĘ*" (up)
 * Key value "*W DÓŁ*" (down)
@@ -148,6 +148,13 @@ Each point/subpoint in following section describes one element of list/sublist i
   * String of garbage data represented by hexadecimal digits
 * (<u>Optional</u>) Music volume numeric value
 * (<u>Optional</u>) Key value "*ZMIANA MUZYCZKI*" (music change)
+
+##### Corrupted names in `*json` converted from `*.cfg`.
+
+Config files can contain more than one name per record data.  
+Whenever a new name with `n` characters is saved to the config file, first `n` bytes are overwritten with certain characters and `n+1`th byte is set to null value. All remaining bytes hold their previous values which may contain older and longer names corrupted by newer and shorter names.  
+All corrupted bytes are saved as `\u0000` in `*.json` files.
+
 
 #### `*.json` converted from `*.pln`:
 
@@ -178,6 +185,12 @@ Each point/subpoint in following section describes one element of list/sublist i
     * Last blockade horizontal bit
 * Camera blockades breakpoint (<u>should always be equal to 0</u>)
 * String encoded in encoding `Windows-1250` with stage name (<u>Maximal number of characters is 20</u>)
+
+##### 9th byte interpretation
+
+When reading and writing tile data or blockade data in `*.pln` files, water bit and horizontal bit values are based on 9th bit of numeric value.  
+If 9th bit is set to `1`, number `2^15` will be subtracted from numeric value and separated bool value will be set to `true` in `*.json` file. Otherwise, number `2^15` will not be subtracted and separated bool value will be set to `false` in `*.json` file.  
+Therefore while editing `*.json` file content, numeric value describing tile or blockade cannot have 9th bit set to `1` while separated bool value is set to `false`.
 
 ### Color conversion
 
@@ -275,9 +288,8 @@ lacel.json2cfg("los.json", "los.cfg")
 
 ## Credits
 
-*Łacel* was created by Mikołaj Walc aka. "*Mikulus*" (contact: mikulus6@gmail.com).
+*Łacel* was created by *Mikołaj Walc* aka. "*Mikulus*" ([GitHub profile](https://github.com/Mikulus6)).
 
 This library is a fan-made tool. It is not affiliated with the official legacy of the video game "*Po prostu Łoś*".
 
-For an archived version of the official "_Po prostu Łoś_" website, visit *baroslaw.republika.pl* via *web.archive.org* by following link: [https://web.archive.org/web/20180320052703/http://www.baroslaw.republika.pl/](https://web.archive.org/web/20180320052703/http://www.baroslaw.republika.pl/).
-
+For an archived version of the official "_Po prostu Łoś_" website, visit [*baroslaw.republika.pl* via *web.archive.org*](https://web.archive.org/web/20180320052703/http://www.baroslaw.republika.pl/).
