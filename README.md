@@ -153,7 +153,7 @@ Each point/subpoint in following section describes one element of list/sublist i
 
 Config files can contain more than one name per record data.  
 Whenever a new name with `n` characters is saved to the config file, first `n` bytes are overwritten with certain characters and `n+1`th byte is set to null value. All remaining bytes hold their previous values which may contain older and longer names corrupted by newer and shorter names.  
-All null bytes are saved as `\u0000` in `*.json` files.
+All corrupted bytes are saved as `\u0000` in `*.json` files.
 
 
 #### `*.json` converted from `*.pln`:
