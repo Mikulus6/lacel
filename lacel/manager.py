@@ -4,6 +4,8 @@ from .constants import acceptable_decoding_types,\
                        datetime_timezone,\
                        encoding_type,\
                        error_values,\
+                       int32_max_value,\
+                       int32_min_value,\
                        json_dumps,\
                        json_loads,\
                        key_type_name,\
@@ -73,7 +75,13 @@ def hexstr_to_int_le(var):
 def int_to_hexstr_le(var):
     """Function converts a 32-bits unsigned integer to a string of hexadecimal symbols (little-endian)."""
 
-    if not((2**32) >= var >= 0):
+    if type(var) != int:
+        raise TypeError(error_values.get("non-int_to_hexstr"))
+
+    if not (int32_max_value >= var >= int32_min_value):
+        raise ValueError(error_values.get("int32_out_of_range"))
+
+    if var < 0:
         var = var % (2 ** 32)
 
     var_1 = int(var
@@ -106,6 +114,9 @@ def int_to_hexstr_le(var):
 
 def int_to_hexstr_le_any(var):
     """Function converts any integer to a string of hexadecimal symbols (little-endian)."""
+
+    if type(var) != int:
+        raise TypeError(error_values.get("non-int_to_hexstr"))
 
     var_hexstr = str(hex(var))[2:].upper()
 
