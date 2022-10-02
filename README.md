@@ -80,7 +80,7 @@ lacel.**dir2arch**(*directory_name*, *archive_name*)
 
 lacel.**img2bar**(*image_file_name*, *bar_file_name*)
 
-> Reads content of a `*.bmp` or `*.png` file image file under given *bar_file_name* file path, converts its content to a Pillow Image Object with color pallete `R5 G6 B5` and saves it as a `*.bar` file under given *bar_file_name* file path. 
+> Reads content of a `*.bmp` or `*.png` file image file under given *image_file_name* file path, converts its content to a Pillow Image Object with color pallete `R5 G6 B5` and saves it as a `*.bar` file under given *bar_file_name* file path. 
 
 lacel.**json2cfg**(*json_file_name*, *cfg_file_name*)
 
