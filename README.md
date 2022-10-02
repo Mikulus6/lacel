@@ -52,7 +52,7 @@ Alternatively you can manually install all dependencies and paste the directory 
 
 lacel.**arch2dir**(*archive_name*, *directory_name*)
 
-> Reads content of a `.*dat` or `.*zpl` archive under given *archive_name* file path, extracts its content and saves all files and subfolders included in that archive under given *directory_name* file path.
+> Reads content of a `*.dat` or `*.zpl` archive under given *archive_name* file path, extracts its content and saves all files and subfolders included in that archive under given *directory_name* file path.
 
 lacel.**bar2bmp**(*bar_file_name*, *bmp_file_name*)
 
@@ -74,7 +74,7 @@ lacel.**cfg2json**(*cfg_file_name*, *json_file_name*)
 
 lacel.**dir2arch**(*directory_name*, *archive_name*)
 
-> Reads content of a directory under given *directory_name* file path and archives its content to a `.*dat` or `.*zpl` archive under given *archive_name* file path.
+> Reads content of a directory under given *directory_name* file path and archives its content to a `*.dat` or `*.zpl` archive under given *archive_name* file path.
 > 
 > Headers of archived files will not contain folder name in their names.
 > 
@@ -94,7 +94,7 @@ lacel.**json2pln**(*json_file_name*, *pln_file_name*)
 
 lacel.**list2arch**(*files_list*, *archive_name*, *remove_base_dirs_from_names*=`False`, *remove_all_dirs_from_names*=`False`)
 
-> Reads content of each file path included in list under given *files_list* object and archives theirs content to a `.*dat` or `.*zpl` archive under given *archive_name* file path.
+> Reads content of each file path included in list under given *files_list* object and archives theirs content to a `*.dat` or `*.zpl` archive under given *archive_name* file path.
 > 
 > If *remove_base_dirs_from_names* is set to `True`, headers of archived files will not contain the highest folder names from given file paths.
 > 
