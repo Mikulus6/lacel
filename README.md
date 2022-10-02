@@ -25,11 +25,11 @@
 
 ## Installation
 
-**Dependencies:**
+### Dependencies
 
 Following programs and packages must be installed in order to use *Łacel*:
 
-* [python 3](https://www.python.org/) (tested with python 3.10.5)
+* [python 3](https://www.python.org/) (tested with python 3.10)
 * python 3 built-in libraries:
   * [datetime](https://docs.python.org/3/library/datetime.html)
   * [json](https://docs.python.org/3/library/json.html)
@@ -37,12 +37,14 @@ Following programs and packages must be installed in order to use *Łacel*:
 * [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script) (tested with setuptools 65.3.0)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
 
+### Installation process
+
 In order to install *Łacel* run the following command ([Git](https://git-scm.com/) is required):
 ```bash
 pip3 install git+https://github.com/Mikulus6/lacel.git
 ```
 
-You can also manually install all dependencies and paste the directory `lacel` into the directory `Lib\site-packages`.
+Alternatively you can manually install all dependencies and paste the directory `lacel` into the directory `Lib\site-packages`.
 
 ## Documentation
 
@@ -74,7 +76,7 @@ lacel.**dir2arch**(*directory_name*, *archive_name*)
 
 > Reads content of a directory under given *directory_name* file path and archives its content to a `.*dat` or `.*zpl` archive under given *archive_name* file path.
 > 
-> Headers of archived files do not contain folder name in their names.
+> Headers of archived files will not contain folder name in their names.
 > 
 > Empty directories will not be archived.
 
@@ -116,7 +118,7 @@ lacel.**txt2lpl**(*txt_file_name*, *lpl_file_name*)
 
 ### Json structure
 
-Each point/subpoint in following section describes one element of list/sublist included in specific `*.json` file.
+Each point/subpoint in following section describes one element of list/sublist included in a specific `*.json` file.
 
 #### `*.json` converted from `*.cfg`:
 
@@ -181,7 +183,7 @@ All corrupted bytes are saved as `\u0000` in `*.json` files.
     * 2nd blockade horizontal bit
   * **[...]** 
   * Last blockade data (<u>Maximum number of camera blockades is 10</u>)
-    * Last tile numeric value (without including horizontal bit)
+    * Last blockade numeric value (without including horizontal bit)
     * Last blockade horizontal bit
 * Camera blockades breakpoint (<u>should always be equal to 0</u>)
 * String encoded in encoding `Windows-1250` with stage name (<u>Maximal number of characters is 20</u>)
