@@ -21,7 +21,7 @@ def read_rename_save_lpl_as_txt(lpl_file_name,
     check_correct_extension(file_name=lpl_file_name,
                             acceptable_extensions=internal_save_extensions)
 
-    # read *.lpl file as a string of hexadecimal symbols
+    # read *.lpl file as bytes
     lpl_bytes = read_file_as_bytes(file_name=lpl_file_name)
 
     # coversion is not needed
