@@ -210,7 +210,7 @@ While using **bar2img()** and **img2bar()** functions, primary colors are conver
 
 ### Text conversion
 
-In order to avoid incorrect text conversion while using **json2cfg()**, **json2pln()** and **txt2lpl()** all `*.txt` and `*.json` flies should be saved in encoding `Windows-1250`.
+In order to avoid incorrect text conversion while using **json2cfg()**, **json2pln()** and **txt2lpl()** all `*.txt` and `*.json` files should be saved in encoding `Windows-1250`.
 
 It is recommended to use [Notepad++](https://notepad-plus-plus.org/) or similar application while reading or editing `*.json` files.
 
