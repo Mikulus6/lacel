@@ -41,7 +41,7 @@ Following programs and packages must be installed in order to use *Łacel*:
 
 In order to install *Łacel* run the following command ([Git](https://git-scm.com/) is required):
 ```bash
-pip3 install git+https://github.com/Mikulus6/lacel.git
+pip install git+https://github.com/Mikulus6/lacel.git
 ```
 
 Alternatively you can manually install all dependencies and paste the directory `lacel` into the directory `Lib\site-packages`.
