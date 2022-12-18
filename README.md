@@ -16,7 +16,7 @@
 **The library supports following conversions:**
 
 * `*.bar` &harr; `*.bmp`
-* `*.bar` &harr; `*.png`
+* `*.bar` &harr; `*.png` (*requires [Pillow](https://pypi.org/project/Pillow/) package*)
 * `*.cfg` &harr; `*.json`
 * `*.dat` &harr; folder/files
 * `*.lpl` &harr; `*.txt`
@@ -35,7 +35,7 @@ Following programs and packages must be installed in order to use *Łacel*:
   * [json](https://docs.python.org/3/library/json.html)
   * [os](https://docs.python.org/3/library/os.html)
 * [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script) (tested with setuptools 65.3.0)
-* [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
+* [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0) (*optional for `*.bar` &harr; `*.png` conversion*) 
 
 ### Installation process
 

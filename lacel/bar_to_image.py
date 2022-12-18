@@ -1,16 +1,22 @@
 from .constants import all_extensions_dict,\
                        bytes_per_color,\
                        color_mode,\
-                       color_mode_alpha
+                       color_mode_alpha,\
+                       error_values
 
 from .manager import check_correct_extension,\
                      create_missing_subdirectories,\
                      hexstr_to_binstr,\
                      hexstr_to_int_le,\
                      os_path_normpath,\
-                     PIL_Image,\
                      read_file_as_hexstr,\
                      scale_color
+
+try:
+    # If error occurs here please install following library: https://pypi.org/project/Pillow/
+    from PIL import Image as PIL_Image
+except ImportError as exc:
+    raise ImportError(error_values.get("pil_not_found"))
 
 # constant values
 internal_image_extensions = all_extensions_dict.get("internal_image_extensions")

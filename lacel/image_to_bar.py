@@ -7,9 +7,14 @@ from .manager import binstr_to_hexstr,\
                      check_correct_type,\
                      int_8_bits_to_binstr,\
                      int_to_hexstr_le,\
-                     PIL_Image,\
                      save_hexstr_to_file,\
                      scale_color
+
+try:
+    # If error occurs here please install following library: https://pypi.org/project/Pillow/
+    from PIL import Image as PIL_Image
+except ImportError:
+    raise ImportError(error_values.get("pil_not_found"))
 
 # constant values
 internal_image_extensions = all_extensions_dict.get("internal_image_extensions")
