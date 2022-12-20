@@ -15,9 +15,11 @@ with open(version_file, 'r') as f:
 datafiles = [(d, [join(d, f) for f in files])
              for d, folders, files in walk(directory)]
 
+optional_packages = {'Pillow': ['Pillow>=9.2.0']}
+
 setup(name="lacel",
       version=version,
-      description="Łacel (Łoś assets conversions external library) is a library written in Python 3"
+      description="Łacel (Łoś assets conversions external library) is a library (package) written in Python 3"
                   "for assets and files conversions from the video game \"Po prostu Łoś\".\n"
                   "For further information read file \"README.md\".",
       author="Mikołaj Walc \"Mikulus\"",
@@ -27,5 +29,5 @@ setup(name="lacel",
       package_dir={"": directory},
       include_package_data=True,
       data_files=datafiles,
-      install_requires=['Pillow>=9.2.0']
+      extras_require=optional_packages
       )

@@ -1,7 +1,7 @@
 """
 Łoś assets conversions external library
 
-Łacel is a library written in Python 3 for assets and files conversions from the video game "Po prostu Łoś".
+Łacel is a library (package) written in Python 3 for assets and files conversions from the video game "Po prostu Łoś".
 For further information read file "README.md".
 """
 
@@ -27,4 +27,4 @@ try:
     from .image_to_bar import read_convert_save_image_file_as_bar as img2bar
 
 except ImportError as exception:
-    print(exception)
+    print("Warning: "+str(exception))
