@@ -18,7 +18,6 @@ from .constants import acceptable_decoding_types,\
                        os_path_join,\
                        os_path_normpath,\
                        os_sep,\
-                       PIL_Image,\
                        unix_epoch_as_filetime
 
 # Functions imported above may be used by other modules. Please ignore warnings saying that they are unused.

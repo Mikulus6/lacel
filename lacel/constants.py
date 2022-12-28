@@ -16,10 +16,6 @@ from os.path import dirname as os_path_dirname, \
                     join as os_path_join, \
                     normpath as os_path_normpath
 
-# If error occurs here please install following library: https://pypi.org/project/Pillow/
-from PIL import Image as PIL_Image
-
-
 # Libraries imported above may be used by other modules. Please ignore warnings saying that they are unused.
 
 

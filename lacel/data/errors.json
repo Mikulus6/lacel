@@ -15,6 +15,7 @@
 "key_value_duplicated": "Key value is duplicated.",
 "non-int_to_hexstr": "Only integers can be converted to strings of hexadecimal symbols.",
 "outside_of_values_range": "Numeric value is outside of acceptable range.",
+"pil_not_found": "Pillow module cannot be found. Images conversions will not work.",
 "pointer_not_found": "Pointer not found.",
 "too_long_stage_name": "Stage name is too long.",
 "too_many_cam_blockades": "Too many camera blockades.",

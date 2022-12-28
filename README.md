@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Łoś assets conversions external library** (shortly "*Łacel*") is a library written in Python 3 for assets and files conversions from the video game "*Po prostu Łoś*".
+**Łoś assets conversions external library** (shortly "*Łacel*") is a library (package) written in Python 3 for assets and files conversions from the video game "*Po prostu Łoś*".
 
 **The library supports following versions of the game:**
 
@@ -16,7 +16,7 @@
 **The library supports following conversions:**
 
 * `*.bar` &harr; `*.bmp`
-* `*.bar` &harr; `*.png`
+* `*.bar` &harr; `*.png` (*requires [Pillow](https://pypi.org/project/Pillow/) package*)
 * `*.cfg` &harr; `*.json`
 * `*.dat` &harr; folder/files
 * `*.lpl` &harr; `*.txt`
@@ -34,15 +34,17 @@ Following programs and packages must be installed in order to use *Łacel*:
   * [datetime](https://docs.python.org/3/library/datetime.html)
   * [json](https://docs.python.org/3/library/json.html)
   * [os](https://docs.python.org/3/library/os.html)
-* [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script) (tested with setuptools 65.3.0)
-* [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0)
+* [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script)
+* [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0) (*optional*) (*needed for `*.bar` &harr; `*.png` conversion*) 
 
 ### Installation process
 
 In order to install *Łacel* run the following command ([Git](https://git-scm.com/) is required):
 ```bash
-pip3 install git+https://github.com/Mikulus6/lacel.git
+pip install git+https://github.com/Mikulus6/lacel.git
 ```
+
+**Note:** Lacel installation may not always install [Pillow](https://pypi.org/project/Pillow/) automatically. Please install it manually if you want to be able to use conversion `*.bar` &harr; `*.png`.
 
 Alternatively you can manually install all dependencies and paste the directory `lacel` into the directory `Lib\site-packages`.
 
