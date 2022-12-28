@@ -26,5 +26,5 @@ try:
     from .bar_to_image import read_convert_save_bar_as_image_file as bar2img
     from .image_to_bar import read_convert_save_image_file_as_bar as img2bar
 
-except ImportError as exception:
+except (ImportError, ModuleNotFoundError) as exception:
     print("Warning: "+str(exception))
