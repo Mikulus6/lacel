@@ -11,5 +11,5 @@ del /Q /s dist
 rmdir /Q /s dist
 del lac.spec
 
-REM # Wait indefinitely in order to avoid unexpected command-line window disappearance.
+REM # Wait indefinitely in order to avoid unexpected command line window disappearance.
 timeout -1
