@@ -34,6 +34,7 @@ Following programs and packages must be installed in order to use *Łacel*:
   * [datetime](https://docs.python.org/3/library/datetime.html)
   * [json](https://docs.python.org/3/library/json.html)
   * [os](https://docs.python.org/3/library/os.html)
+  * [sys](https://docs.python.org/3/library/sys.html) (necessary only for `lac.py` script)
 * [setuptools](https://pypi.org/project/setuptools/) (necessary only for `setup.py` script)
 * [Pillow](https://pypi.org/project/Pillow/) (tested with Pillow 9.2.0) (*optional*) (*needed for `*.bar` &harr; `*.png` conversion*) 
 
@@ -288,6 +289,42 @@ file.write(json.dumps(json_data))
 file.close()
 
 lacel.json2cfg("los.json", "los.cfg")
+```
+
+## Executable file - "Łoś assets converter" - supplement 
+
+Instead of using Python itself, it is possible to compile lacel into an executable file and simply run it in the command line.
+
+Parent directory of `lacel` should contain two given files: `compile.cmd` and `lac.py`. By running the first one, an attempt will be made to compiled the second one to `lac.exe`. ([pip](https://pypi.org/) must be added to [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) in order to run successfully `compile.cmd` script.)
+
+It is also possible to download pre-compiled executable file from [lacel releases section on GitHub](https://github.com/Mikulus6/lacel/releases).
+
+### Usage
+
+Open command line in the directory where `lac.exe` file is located.
+Usage syntax is the following:
+```batch
+lac.exe <command name> <input file> <output file> <*optional arguments>
+```
+All arguments are interpreted as strings as long as they cannot be interpreted as `*.json` file content.
+Otherwise they are interpreted as `*.json` file content.
+The order of arguments is the same as in the *Documentation* section.
+
+Run `lac.exe` without any arguments in order to display a list of available commands.
+
+### Examples
+
+Extract `bary/bary.dat` archive to `bary/bary` folder.
+```batch
+lac.exe arch2dir bary/bary.dat bary/bary
+```
+Convert `bary/bary/alfabet.bar` file to `bary/bary/alfabet.png` image with black pixels set to transparent pixels.
+```batch
+lac.exe bar2img bary/bary/alfabet.bar bary/bary/alfabet.png true
+```
+Pack `plansze/plansza_000.pln` and `plansze/plansza_001.pln` into `plansze/zestaw.zpl` package.
+```batch
+lac.exe list2arch [\"plansze/plansza_000.pln\",\"plansze/plansza_001.pln\"] plansze/zestaw.zpl
 ```
 
 ## Credits
