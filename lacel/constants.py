@@ -2,8 +2,7 @@ from datetime import datetime as datetime_datetime, \
                      timezone as datetime_timezone
 
 from json import dumps as json_dumps, \
-                 loads as json_loads, \
-                 load as json_load
+                 loads as json_loads
 
 from os import listdir as os_listdir, \
                mkdir as os_mkdir, \
@@ -19,28 +18,10 @@ from os.path import dirname as os_path_dirname, \
 # Libraries imported above may be used by other modules. Please ignore warnings saying that they are unused.
 
 
-def load_json_dict(json_file_name,
-                   keys_to_ints=False):
-    """Loads dictionary from *.json file."""
-
-    # get path relative to module
-    json_file_path = os_path_normpath(os_path_join(os_path_dirname(__file__), json_file_name))
-
-    file = open(json_file_path, 'r')
-    dict_ = json_load(file)
-    file.close()
-
-    if type(dict_) != dict:
-        raise TypeError
-
-    if keys_to_ints:
-        dict_new = {}
-        for key in list(dict_.keys()):
-            key_int = int(key)
-            dict_new[key_int] = dict_.get(key)
-        return dict_new
-    else:
-        return dict_
+# ===== Constant dictionaries =====
+from .data.extensions import all_extensions_dict
+from .data.errors import error_values
+from .data.keys import keyboard_values
 
 
 # ===== Constant values =====
@@ -63,12 +44,6 @@ package_name_max_length = 100
 pln_max_camera_blockades = 10
 pln_max_stage_name_length = 20
 unix_epoch_as_filetime = 116444736000000000
-
-# ===== Constant dictionaries =====
-all_extensions_dict = load_json_dict("data/extensions.json")  # all extensions must be in uppercase
-error_values = load_json_dict("data/errors.json")
-keyboard_values = load_json_dict("data/keys.json",  # should be written in encoding Windows-1250
-                                  keys_to_ints=True)
 
 # ===== Constant json elements types =====
 json_cfg_list_types = [key_type_name, key_type_name, key_type_name, key_type_name,
